@@ -1,0 +1,44 @@
+<h1>Welcome to Django Society Sign Up!</h1>
+
+<form method="post", enctype="multipart/form-data">
+	{% csrf_token %}
+
+	{{ form.as_p }}
+
+	<button type="submit">Upload</button>
+</form>
+
+{% if img_obj %}
+	<h3>Successfully uploaded: {{img_obj.title}}</h3>
+	<img src="{{ img_obj.image.url }}" alt="connect" style="max-height:300px">
+{% endif %}
+
+
+<form action="{% url 'society:success' %}" method="post">
+	{% csrf_token %}
+
+	<label for="about_me">About Me:</label><br>
+	<input type="text" name="about_me"><br>
+
+	<label for="birth_date">Birth Date:</label><br>
+	<input type="date" name="birth_date"><br>
+
+	<label for="fav_movies">Favorite Movies:</label><br>
+	<input type="text" name="fav_movies"><br>
+
+	<label for="first_name">First Name:</label><br>
+	<input type="text" name="first_name"><br>
+
+	<label for="last_name">Last Name:</label><br>
+	<input type="text" name="last_name"><br>
+
+	<label for="username">Username:</label><br>
+	<input type="text" name="username"><br>
+
+	<label for="photo_url">Photo URL:</label><br>
+	<input type="text" name="photo_url"><br>
+
+	<input type="submit" value="Sign Up">
+	
+</form>
+

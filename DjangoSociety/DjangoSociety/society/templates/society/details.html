@@ -1,0 +1,19 @@
+{% if detailview %}
+
+	<h1>Details for this group</h1>
+	<ul>
+		<li>{{detailview.name}}</li>
+		<li>{{detailview.members}}</li>
+		<li>{{detailview.description}}</li>
+		<li>{{detailview.category}}</li>
+		<li>{{detailview.website_url}}</li>
+	</ul>
+
+{% else %}
+	<p>No group is available.</p>
+{% endif %}
+
+<a href="http://localhost:8000/society/group/">
+	<button class="btn info">Go Back</button>
+</a>
+

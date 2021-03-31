@@ -1,0 +1,15 @@
+<h1>Please find below groups available</h1>
+
+{% if latest_group_list %}
+	<ul>
+	{% for group in latest_group_list %}
+		<li><a href="/society/group/{{group.id}}/">{{group.name}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No group is available.</p>
+{% endif %}
+
+<a href="http://localhost:8000/society/">
+	<button class="btn info">Go Back</button>
+</a>
